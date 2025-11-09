@@ -38,6 +38,34 @@
 
 ### 5. Upload the ACL file you created.
 
+```
+[
+    {
+        "keyPrefix": "s3://career4all-course-catalogs-dd/Data/Security/",
+        "aclEntries": [
+            {
+                "Name": "CareerCoaches",
+                "Type": "GROUP",
+                "Access": "ALLOW"
+            }
+        ]
+    },
+        {
+        "keyPrefix": "s3://career4all-course-catalogs-dd/Data/Medicine/",
+        "aclEntries": [
+            {
+                "Name": "CareerCoaches",
+                "Type": "GROUP",
+                "Access": "DENY"
+            }
+        ]
+    }
+]
+
+```
+
+
+
 ![5 Screenshot 2025-11-09 235813.png](https://images.tomarkdown.dev/uploaded/ujfj1ie5n5damdku.png)
 
 
