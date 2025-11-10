@@ -1,0 +1,28 @@
+[
+    {
+        "keyPrefix": "s3://career4all-course-catalogs-dd/Data/Security/",
+        "aclEntries": [
+            {
+                "Name": "CareerCoaches",
+                "Type": "GROUP",
+                "Access": "ALLOW"
+            }
+        ]
+    },
+    {
+        "keyPrefix": "s3://career4all-course-catalogs-dd/Data/Medicine/",
+        "aclEntries": [
+            {
+                "Name": "career.coach.one",
+                "Type": "USER",
+                "Access": "DENY"
+            },
+	{
+                "Name": " career.coache.two ",
+                "Type": "USER",
+                "Access": "ALLOW"
+            }
+        ]
+    }
+]
+
