@@ -81,11 +81,253 @@
 ![Screenshot 2025-11-10 003035.png](https://images.tomarkdown.dev/uploaded/v6d4yfsx876urcwj.png)
 
 
+-----
+
+# Resubmission 
 
 
 
+## Create and Customize Amazon Q Application
+
+### Build a functioning Q App that analyzes skills and recommends training to bridge the skill gap.
+
+
+-   Input cards exist for uploading CVs and Job Profiles. 
+    
+-   Output cards are implemented for both Skill Gap Analysis and Training Recommendations. 
+        
+-   Functionality is verified by uploading sample inputs and generating results. 
+
+![Screenshot 2025-11-10 163614.png](https://images.tomarkdown.dev/uploaded/9yx9wjv7lnbj2t8z.png)
+
+### Enhance the application with advanced interaction components
+-   "Training Recommendation" configuration should depend on "Skill Gap" and "Coach Recommendation".
+-   Functionality of added components is tested and confirmed. Enter a real coach recommendation and share a sample of your input and the generated output. 
+
+![Screenshot 2025-11-10 172601.png](https://images.tomarkdown.dev/uploaded/1g4oj6t799vq4id6.png)
+
+
+![Screenshot 2025-11-10 172758.png](https://images.tomarkdown.dev/uploaded/in06mlcn8ko8782w.png)
+
+
+-----
+## Upload Static PDF and Connect Amazon S3
+
+###  Configure automatic updates for training documents using Amazon S3
+
+-  Showing the daily sync is configured and active for the S3 data source
+-   Scheduled  **daily sync**  is configured and active for the S3 data source.
+
+![Screenshot 2025-11-10 145935.png](https://images.tomarkdown.dev/uploaded/hzl4ieapzrqzesek.png)
+
+-   Screenshot confirms the next scheduled sync time.
+
+![Screenshot 2025-11-10 150146.png](https://images.tomarkdown.dev/uploaded/ugqzov70tplbd2ne.png)
+
+
+### Configure additional data sources, including a manually uploaded PDF and an Amazon S3 bucket
+
+
+-   Datasource added for S3 bucket and FileUpload
+
+![Screenshot 2025-11-10 150559.png](https://images.tomarkdown.dev/uploaded/n9agg7g32wphp7yp.png)
+
+-   FileUpload uploaded files
+
+![Screenshot 2025-11-10 150719.png](https://images.tomarkdown.dev/uploaded/8q9mev1v2b7y3dwx.png)
+
+-   S3 bucket uploaded files
+
+![Screenshot 2025-11-10 150958.png](https://images.tomarkdown.dev/uploaded/cohay36htdv9dosg.png)
+
+
+---
+
+## Secure the Application
+### Configure access controls for restricted course content based on user groups
+
+- upload your ACL file to your S3 bucket.
+
+```
+
+
+[
+    {
+        "keyPrefix": "s3://career4all-course-catalogs-dd/Data/Security/",
+        "aclEntries": [
+            {
+                "Name": "CareerCoaches",
+                "Type": "GROUP",
+                "Access": "ALLOW"
+            }
+        ]
+    },
+    {
+        "keyPrefix": "s3://career4all-course-catalogs-dd/Data/Medicine/",
+        "aclEntries": [
+            {
+                "Name": "career.coach.one",
+                "Type": "USER",
+                "Access": "DENY"
+            },
+	{
+                "Name": " career.coache.two ",
+                "Type": "USER",
+                "Access": "ALLOW"
+            }
+        ]
+    }
+]
+
+
+```
+
+-  Screentshot of ACL file 
+
+![Screenshot 2025-11-10 160117.png](https://images.tomarkdown.dev/uploaded/mjf2r9497da15tm5.png)
+
+- ACL upload to the S3 bucket  
+
+![Screenshot 2025-11-10 160612.png](https://images.tomarkdown.dev/uploaded/i4dbwmn690p38w9o.png)
+
+- Screentshot ACL file to S3 bucket.
+
+![Screenshot 2025-11-10 170127.png](https://images.tomarkdown.dev/uploaded/ndy1ojldaisdfku4.png)
+
+-    Access Denied
+
+![Screenshot 2025-11-10 175543.png](https://images.tomarkdown.dev/uploaded/jnr59mi1ay7yrzap.png)
+
+-   Access success
+
+![Screenshot 2025-11-10 175848.png](https://images.tomarkdown.dev/uploaded/e5r7waa7apntmtg4.png)
+
+
+### Implement content moderation by defining restricted keywords.
+
+![4 Screenshot 2025-11-09 235736.png](https://images.tomarkdown.dev/uploaded/7ecfpl2p6xndepo4.png)
+
+---
+## Publish and Share the Application
+
+### Share the final application and mark it as a Verified Q App
+
+
+-   Custom labels needs to be applied (e.g., Career Coaching, AI-powered) 
+
+![Screenshot 2025-11-10 173425.png](https://images.tomarkdown.dev/uploaded/zoslqq4661vgl0bc.png)
+
+-   Then choose them from Edit categories.
+
+![Screenshot 2025-11-10 173713.png](https://images.tomarkdown.dev/uploaded/lrmu3dx1x3ta1ezj.png)
+
+
+![Screenshot 2025-11-10 173725.png](https://images.tomarkdown.dev/uploaded/1wf21oinbh6z5gq2.png)
+
+-   The app is endorsed as a Verified Q App.
+
+![Screenshot 2025-11-10 173957.png](https://images.tomarkdown.dev/uploaded/3h50npi54mp02axx.png)
+
+
+- The app is marked as a Verified Q App.
+
+![Screenshot 2025-11-10 174048.png](https://images.tomarkdown.dev/uploaded/j8w8kvg46bm63uih.png)
+
+-   verification status are successful.
+
+
+
+
+
+-----
+
+
+## Skill gap analysis :
+
+### Skill Gap Analysis: John Doe's CV vs. Cloud Solutions Architect – Generative AI Position
+
+### Key Gaps Identified
+
+### Technical Skills & Experience
+1. **Generative AI Knowledge**: The job requires deep knowledge of Generative AI and Large Language Models (LLMs), which is not mentioned in John's CV.
+2. **AI/ML Frameworks**: Experience with TensorFlow, PyTorch, Hugging Face, and LangChain is required but not evident in John's background.
+3. **Years of Experience**: The position requires 5+ years in cloud architecture, AI/ML, or software development roles, while John appears to be a recent graduate with only internship experience.
+4. **Programming Depth**: Strong programming skills in Python, Java, or Scala with specific AI applications (model fine-tuning, prompt engineering) are required but not demonstrated in the CV.
+5. **Cloud Service Expertise**: While John is AWS Certified Cloud Practitioner, the job requires deeper experience with specific AI/ML services like AWS Bedrock, Amazon SageMaker, Azure OpenAI, or Vertex AI.
+
+### Advanced Technical Requirements
+1. **Model Deployment**: Experience deploying AI models in serverless, Kubernetes, or containerized environments is missing.
+2. **MLOps & CI/CD**: Understanding of MLOps and CI/CD pipelines for AI model deployment is not mentioned.
+3. **Vector Databases & RAG**: Familiarity with vector databases, embeddings, and retrieval-augmented generation techniques is absent.
+4. **AI Integration**: No experience integrating Generative AI into practical applications like chatbots or search systems.
+
+### Certifications & Specializations
+1. **Advanced Cloud Certifications**: John has entry-level AWS certification, but more advanced cloud architecture certifications would be beneficial.
+2. **AI/ML Specializations**: No AI/ML specific certifications are listed.
+
+### Project Experience
+1. **AI Project Work**: No AI/ML-focused projects are mentioned in John's CV.
+2. **Scale & Complexity**: John's projects don't demonstrate experience with the scale and complexity required for enterprise AI solutions.
+
+## Recommendations for Improvement
+
+1. **Education & Certification**: Pursue advanced AI/ML certifications and specialized training in Generative AI.
+2. **Technical Skill Development**: Gain hands-on experience with AI frameworks (TensorFlow, PyTorch) and LLM implementations.
+3. **Project Portfolio**: Develop AI-focused projects demonstrating practical applications of Generative AI.
+4. **Experience Building**: Consider intermediate roles to build the required years of experience before applying for this senior position.
+5. **Specialized Knowledge**: Develop expertise in AI ethics, bias mitigation, and responsible AI deployment.
+
+This position appears to be a senior-level role requiring substantial specialized experience in AI and cloud architecture, representing a significant gap from John's entry-level profile.
+
+
+----
+## Training Recommendations :
+
+### Personalized Training Recommendations for AI/ML Skill Development 
+
+#### Priority 1: Machine Learning Fundamentals 
+
+**Machine Learning Course** 
+This course introduces fundamental concepts and techniques for designing programs that learn from data. The curriculum covers essential topics including the learning problem, types of learning, training/validation/testing methodologies, and preventing overfitting. You'll gain practical experience building models for prediction and data organization while learning to use basic ML libraries. This addresses your core knowledge gap in AI/ML frameworks and provides the theoretical foundation needed for more advanced AI work. 
+
+## Priority 2: Artificial Intelligence Foundations 
+
+**Artificial Intelligence Course** 
+This comprehensive AI course covers essential topics including problem-solving techniques, intelligent searching algorithms, and game playing strategies. You'll learn about knowledge representation methods, logic programming with Prolog, and advanced problem-solving using planning and handling uncertainty with probabilistic models and fuzzy logic. The course also includes machine learning fundamentals covering inductive/deductive learning, artificial neural networks, support vector machines, and expert systems. This directly addresses your gaps in AI knowledge, programming depth, and AI frameworks. 
+
+## Priority 3: Software Engineering Practices 
+
+**Software Engineering Course** 
+This course will help you understand various phases of the software development lifecycle and apply key aspects of software engineering processes for complex system development. You'll learn to analyze requirements systematically and develop models using standard tools and techniques. The curriculum covers software development process models (Waterfall, Incremental, Rapid Prototyping, Spiral) and good program design techniques including structured programming, coupling/cohesion, and abstraction. This knowledge will strengthen your software development foundation and help with MLOps and CI/CD pipeline understanding. 
+
+## Priority 4: Database Management 
+
+**Advanced Database Management Course** 
+This course covers important database concepts including concurrency control, query optimization, and data warehousing. You'll learn about dimensional modeling, slowly changing dimensions, fact tables, OLAP objects, business intelligence, and ETL technologies. The course also addresses file management concepts including B-Trees and B+ Trees. This knowledge will help address your gap in understanding vector databases and data management for AI systems. 
+
+## Recommended Learning Path 
+
+1. Start with the Machine Learning course to build your fundamental understanding 
+2. Progress to the Artificial Intelligence course to deepen your knowledge of AI concepts and techniques 
+3. Take the Software Engineering course to understand development processes for complex systems 
+4. Complete the Database Management course to round out your technical knowledge 
+
+These courses will help you build the theoretical foundation needed for the Cloud Solutions Architect role while providing opportunities to develop practical skills through hands-on projects.
+
+
+-----
+
+## Schedule 
+
+Based on the information provided, I can see that the text in the question appears to be a copy of the personalized training recommendations I previously provided in our conversation. However, there doesn't seem to be an actual question or prompt for me to respond to.
+
+The text contains the training recommendations I created based on the skill gap analysis between John Doe's CV and the Cloud Solutions Architect - Generative AI job description. These recommendations include courses in Machine Learning Fundamentals, Artificial Intelligence Foundations, Software Engineering Practices, and Database Management, along with a suggested learning path.
+
+If you have a specific question about these recommendations or would like me to elaborate on any aspect of them, please let me know.
+
+----
 --------
-## Output ;
+## v1- Output ;
 
 # skill gap analysis
 
