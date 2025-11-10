@@ -231,7 +231,7 @@
 
 - The app is marked as a Verified Q App.
 
-![Screenshot 2025-11-10 174048.png](https://images.tomarkdown.dev/uploaded/j8w8kvg46bm63uih.png)
+![Screenshot 2025-11-10 212120.png](https://images.tomarkdown.dev/uploaded/z4louzjm2wgo2wxf.png)
 
 -   verification status are successful.
 
