@@ -70,15 +70,9 @@
 
 
 
----------
 
-## OPTITIONAL SCREENSHOT
 
-### Application Verified
 
-![Screenshot 2025-11-10 002706.png](https://images.tomarkdown.dev/uploaded/p04ckl0f3a9z20pk.png)
-
-![Screenshot 2025-11-10 003035.png](https://images.tomarkdown.dev/uploaded/v6d4yfsx876urcwj.png)
 
 
 -----
@@ -219,10 +213,10 @@
 
 -   Then choose them from Edit categories.
 
-![Screenshot 2025-11-10 173713.png](https://images.tomarkdown.dev/uploaded/lrmu3dx1x3ta1ezj.png)
+![Screenshot 2025-11-10 212056.png](https://images.tomarkdown.dev/uploaded/cfb3ish1ino23vrp.png)
 
 
-![Screenshot 2025-11-10 173725.png](https://images.tomarkdown.dev/uploaded/1wf21oinbh6z5gq2.png)
+![Screenshot 2025-11-10 212841.png](https://images.tomarkdown.dev/uploaded/aehggr9m69gims1n.png)
 
 -   The app is endorsed as a Verified Q App.
 
